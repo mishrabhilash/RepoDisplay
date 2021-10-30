@@ -51,14 +51,19 @@ class PRDisplayActivityViewModel(private val app: Application) : AndroidViewMode
         }
         screenState.postValue(ScreenState.LOADING)
         viewModelScope.launch(exceptionHandler) {
-            val list = networkApi.getAllClients(user, repoName, RepoState.CLOSED.state, 5, pageCount)
-            list.body()?.let {
-                prList.value = it
-                if (it.isNotEmpty()) {
-                    pageCount++
-                } else {
-                    reachedEnd = true
+            val response = networkApi.getAllClients(user, repoName, RepoState.CLOSED.state, 5, pageCount)
+            Log.d("response", "$response")
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    prList.value = it
+                    if (it.isNotEmpty()) {
+                        pageCount++
+                    } else {
+                        reachedEnd = true
+                    }
                 }
+            } else {
+                screenState.value = ScreenState.ERROR_GENERAL
             }
         }
     }
