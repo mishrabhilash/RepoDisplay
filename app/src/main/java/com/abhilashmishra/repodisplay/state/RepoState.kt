@@ -1,4 +1,4 @@
-package com.abhilashmishra.repodisplay.model
+package com.abhilashmishra.repodisplay.state
 
 enum class RepoState(val state: String) {
     ALL("all"),

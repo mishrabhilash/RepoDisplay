@@ -1,5 +1,6 @@
 package com.abhilashmishra.repodisplay.adapter
 
+import android.text.format.DateUtils
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,9 +11,6 @@ import com.abhilashmishra.repodisplay.utility.setCornerRadius
 import com.bumptech.glide.Glide
 import java.text.SimpleDateFormat
 import java.util.*
-import android.text.format.DateUtils
-import android.text.format.Time
-import android.util.Log
 
 class ClosedPRViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
     private val titleText: TextView = view.findViewById(R.id.titleText)

@@ -3,4 +3,9 @@
     <string name="createdAtLabel">Created At</string>
     <string name="closedAtLabel">Closed At</string>
     <string name="userAvatarDescription">User Avatar</string>
+    <string name="pull_request_title">Pull Request</string>
+    <string name="error_message_text_general">Oh snap! some error has occurred, please try refreshing.</string>
+    <string name="error_message_text_network">Oh snap! your internet may not be working, please turn it on and try refreshing</string>
+    <string name="error_message_text_no_data">Looks like there are no closed pull requests</string>
+
 </resources>
