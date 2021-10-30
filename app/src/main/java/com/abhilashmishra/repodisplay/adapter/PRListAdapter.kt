@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.abhilashmishra.repodisplay.R
 import com.abhilashmishra.repodisplay.model.PRModel
 
-class PRListAdapter(private val arrayList: ArrayList<PRModel>) : RecyclerView.Adapter<ClosedPRViewHolder>() {
+class PRListAdapter(private val arrayList: List<PRModel>) : RecyclerView.Adapter<ClosedPRViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClosedPRViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_pull_request, parent)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_pull_request, parent, false)
         return ClosedPRViewHolder(view)
     }
 
