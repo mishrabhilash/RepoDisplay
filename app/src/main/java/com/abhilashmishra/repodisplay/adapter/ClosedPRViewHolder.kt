@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import java.text.SimpleDateFormat
 import java.util.*
 import android.text.format.DateUtils
+import android.text.format.Time
 import android.util.Log
 
 class ClosedPRViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -33,7 +34,7 @@ class ClosedPRViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
 
 private fun String?.formatDate(): CharSequence? {
     val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH)
-    dateFormat.timeZone = TimeZone.getDefault()
+    dateFormat.timeZone = TimeZone.getTimeZone("GMT")
     this?.let { currentString ->
         val time = dateFormat.parse(currentString)?.time
         time?.let {
