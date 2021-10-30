@@ -9,6 +9,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+
 interface NetworkApi {
     @GET("repos/{user}/{repo}/pulls")
     suspend fun getAllClients(
@@ -20,7 +21,7 @@ interface NetworkApi {
     ): Response<List<PRModel>>
 
     companion object {
-        const val BASE_URL = "https://api.github.com/"
+        private const val BASE_URL = "https://api.github.com/"
         operator fun invoke(): NetworkApi {
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
